@@ -181,7 +181,7 @@ If you hit the buttom "Bifurcation", the bifurcation diagram should appear in th
 
 ![alt text](https://imgur.com/iCeeCMF.jpg "Bifurcation Logistic Map")
 
-To return to the map response, just move the slider to any position.
+To return to the map response, just move the slider to any position or click in one of the two buttons below the slider.
 
 # Authors
 
