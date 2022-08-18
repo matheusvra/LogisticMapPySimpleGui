@@ -33,7 +33,7 @@ sg.theme('black')
 # New layout with slider and padding
 
 layout = [
-        [sg.Text(text="Logistic map - F(x[k-1]) = µ(1 - x[k-1])x[k-1]",
+        [sg.Text(text="Logistic map - F(x[k]) = µ(1 - x[k-1])x[k-1]",
                    font=SliderFont,
                    background_color='#FDF6E3',
                    pad=((0, 0), (10, 0)),
