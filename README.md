@@ -173,13 +173,13 @@ To run the application, make sure that the virtual environment is active and sim
 The application window should appear like this:
 
 
-![alt text](https://imgur.com/1Ytl12l.jpg "Logistic Map")
+![alt text](https://imgur.com/gGRTclS.jpg "Logistic Map")
 
 It's possible to evaluate the map for any value of the parameter µ in the range between 2 and 4, using the slider.
 
 If you hit the buttom "Bifurcation", the bifurcation diagram should appear in the screen like this:
 
-![alt text](https://imgur.com/iCeeCMF.jpg "Bifurcation Logistic Map")
+![alt text](https://imgur.com/GKEAzcR.jpg "Bifurcation Logistic Map")
 
 To return to the map response, just move the slider to any position or click in one of the two buttons below the slider.
 
