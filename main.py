@@ -8,7 +8,7 @@ from matplotlib.backends.backend_tkagg import FigureCanvasTkAgg
 _VARS = {'window': False,
          'fig_agg': False,
          'pltFig': False,
-         'mu': 2.001,
+         'mu': 2.0,
          'bifurcation': None}
 
 
@@ -38,13 +38,19 @@ layout = [
                    background_color='#FDF6E3',
                    pad=((0, 0), (10, 0)),
                    text_color='Black')],
+        [sg.Text(text="",
+                   font=SliderFont,
+                   background_color='#FDF6E3',
+                   pad=((0, 0), (30, 0)),
+                   text_color='Black',
+                   key='screen')],
         [sg.Canvas(key='figCanvas', background_color='#FDF6E3')],
           [sg.Text(text="µ :",
                    font=SliderFont,
                    background_color='#FDF6E3',
                    pad=((0, 0), (10, 0)),
                    text_color='Black'),
-           sg.Slider(range=(2.001, 3.999), orientation='h', size=(47, 20),
+           sg.Slider(range=(2, 4), orientation='h', size=(47, 20),
                      default_value=_VARS['mu'],
                      background_color='#FDF6E3',
                      text_color='Black',
@@ -55,7 +61,7 @@ layout = [
                      font=AppFont,
                      pad=((4, 0), (10, 0)))],
           # pad ((left, right), (top, bottom))
-          [sg.Button('Exit', font=AppFont, pad=((540, 0), (0, 0)))]]
+          [sg.Button('<', pad=((250, 0), (0, 0))), sg.Button('>', pad=((10, 0), (0, 0))), sg.Button('Exit', font=AppFont, pad=((210, 0), (0, 0)))]]
 
 _VARS['window'] = sg.Window('Logistic Map',
                             layout,
@@ -133,10 +139,26 @@ def updateChartBifurcation():
     _VARS['fig_agg'] = draw_figure(
         _VARS['window']['figCanvas'].TKCanvas, _VARS['pltFig'])
 
+    _VARS['window']['screen'].update("Bifurcation Diagram")
+
 
 def updateData(val):
     _VARS['mu'] = val
     updateChart()
+    _VARS['window']['screen'].update("")
+
+def decrement_mu():
+    _VARS['mu'] = max(2, _VARS['mu'] - 0.001)
+    _VARS['window']['-Slider-'].update(_VARS['mu'])
+    updateChart()
+    _VARS['window']['screen'].update("")
+    
+
+def increment_mu():
+    _VARS['mu'] = min(4, _VARS['mu'] + 0.001)
+    _VARS['window']['-Slider-'].update(_VARS['mu'])
+    updateChart()
+    _VARS['window']['screen'].update("")
 
 # \\  -------- PYPLOT -------- //
 
@@ -155,4 +177,8 @@ if __name__ == "__main__":
             updateChartBifurcation()
         elif event == '-Slider-':
             updateData(float(values['-Slider-']))
+        elif event == '<':
+            decrement_mu()
+        elif event == '>':
+            increment_mu()
     _VARS['window'].close()
