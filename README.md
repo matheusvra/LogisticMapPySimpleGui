@@ -1,5 +1,6 @@
 # Logistic Map Bifurcation - PySimpleGui
 
+![alt text](https://imgur.com/GKEAzcR.jpg "Bifurcation Logistic Map")
 
 This project will present an application to view the logistic map bifurcation, as well as a tutorial on how to configure your environment for the first time to run the application.
 
