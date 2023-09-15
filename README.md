@@ -4,6 +4,8 @@
 
 This project will present an application to view the logistic map bifurcation, as well as a tutorial on how to configure your environment for the first time to run the application.
 
+[See Logistic Map on Wikipedia](https://en.wikipedia.org/wiki/Logistic_map)
+
 ----
 
 ***Disclaimer***: This tutorial was made and tested on Ubuntu, if 
